@@ -1,0 +1,24 @@
+{
+  "name": "english",
+  "version": "1.0.0",
+  "description": "大学英语\r \t首先在本地创建仓库 git init\r \t然后再远程创建仓库\r \t为本地仓库添加远程仓库 git remote add origin 远程仓库的地址\r \t提交文件 git add 【文件名】 git commit -m \"提交的描述\"\r \t修改文件 git add 【文件名】git commit -m \"提交描述\"\r \t删除文件 git rm 【文件名】rm 【文件名】 git commit -m \"提交描述\"\r \t将代码提交到远程仓库 git push origin master",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ermaitaichen/english.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ermaitaichen/english/issues"
+  },
+  "homepage": "https://github.com/ermaitaichen/english#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.0",
+    "pug": "^2.0.3"
+  }
+}
