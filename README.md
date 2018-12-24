@@ -1,5 +1,4 @@
-# english
-1. 大学英语
+# git使用的基本流程
    1. 首先在本地创建仓库 git init
    2. 然后再远程创建仓库
    3. 为本地仓库添加远程仓库 git remote add origin 远程仓库的地址
