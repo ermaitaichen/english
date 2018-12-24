@@ -2,6 +2,22 @@ const express = require('express');
 
 // 创建一个服务器
 const app = express();
+
+
+// 监听请求
+app.get('/', function(req, res) {
+	res.send('系统启动成功 端口 4000');
+});
+
+
+
+
+
+
+// 连接数据库
+
+// 静态资源托管
+
 // 监听端口
 app.listen(4000, function(err) {
 	if(err) {
@@ -10,9 +26,4 @@ app.listen(4000, function(err) {
 	else {
 		console.log('系统启动成功');
 	}
-});
-
-// 监听请求
-app.get('/', function(req, res) {
-	res.send('系统启动成功 端口 4000');
 });
