@@ -1,12 +1,12 @@
 const express = require('express');
-
+const pug = require('pug');
 // 创建一个服务器
 const app = express();
 
 
 // 监听请求
 app.get('/', function(req, res) {
-	res.send('系统启动成功 端口 4000');
+	res.render('admin');
 });
 
 
@@ -17,6 +17,14 @@ app.get('/', function(req, res) {
 // 连接数据库
 
 // 静态资源托管
+app.use('/static', express.static('public'))
+/*
+	设置模板引擎
+*/
+// 注册模板引擎
+app.set('view engine', 'pug');
+// 设置模板的访问路径
+app.set('views', './views');
 
 // 监听端口
 app.listen(4000, function(err) {
