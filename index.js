@@ -1,20 +1,27 @@
 const express = require('express');
 const pug = require('pug');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const indexRoute = require('./routes/indexRoute');
 // 创建一个服务器
 const app = express();
 
+/*
+	配置 body parser
+*/
 
-// 监听请求
-app.get('/', function(req, res) {
-	res.render('admin');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// 连接数据库 E:\data\db
+mongoose.connect('mongodb://localhost/english', function(err) {
+	if(err) {
+		console.log('链接数据库err: ', err);
+	}
+	else {
+		console.log('链接数据库成功');
+	}
 });
-
-
-
-
-
-
-// 连接数据库
 
 // 静态资源托管
 app.use('/static', express.static('public'))
@@ -35,3 +42,6 @@ app.listen(4000, function(err) {
 		console.log('系统启动成功');
 	}
 });
+
+// 监听请求
+app.use('/', indexRoute);

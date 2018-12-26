@@ -42,3 +42,22 @@
 1. mongodb 启动命令
 
 	mongod --dbpath [db目录]
+2. mongodb 基本命令
+
+	mongod 进入命令行模式
+
+	show dbs 显示数据库
+
+	show tables 显示数据库中的集合
+
+	use [name] 创建数据库 如果数据库存在则切换当当前的数据库
+
+	db.dropDatabase() 删除当前的数据库
+
+	db.[collectionName].drop() 删除集合
+
+	db.createCollection([collectionName]) 创建集合
+
+	数据库 集合 文档
+
+	文档是插入的
