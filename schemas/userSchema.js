@@ -23,7 +23,8 @@ const userSchema = new mongoose.Schema({
 	role: {
 		type: String,
 		default: '0'
-	}
+	},
+	pId: String
 });
 
 

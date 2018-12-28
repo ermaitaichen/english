@@ -21,8 +21,18 @@
 				},
 				success: function(msg) {
 					console.log('成功信息: ' ,msg);
-					// 页面跳转
-					window.location.href = '/admin/' + msg.uId;
+					if(msg.role == 1) {
+						// 页面跳转
+						window.location.href = '/admin/' + msg.uId;
+					}
+					else if(msg.role == 2) {
+						// 页面跳转
+						window.location.href = '/teacher/' + msg.uId;
+					}
+					else if(msg.role == 3) {
+						// 页面跳转
+						window.location.href = '/student/' + msg.uId;
+					}
 				},
 				error: function(msg) {
 					console.log('错误信息: ' ,msg);

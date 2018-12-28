@@ -50,6 +50,19 @@ body
 			input(type="text" placeholder="确认密码" class="adminRepPassword")
 		li
 			button(class="adminSubmit") 提交
+	div(class="msg")
 	ul(class="teacherList")
+		li 教师信息
+		each val in users
+			li
+				span 角色 
+				span #{val.role} 
+				span 姓名 
+				span #{val.username} 
+				span 性别 
+				span #{val.sex} 
 	ul(class="studentList")
+		li 学生信息
 	ul(class="adminList")
+		li 管理员信息
+	input(type="hidden" id="pId" value=pId)

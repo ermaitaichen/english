@@ -1,5 +1,6 @@
 const Users = require('../schemas/userSchema');
 const admin = require('../controller/admin');
+const teacher = require('../controller/teacher');
 
 module.exports = function(app) {
 	// 统一登录页
@@ -25,17 +26,26 @@ module.exports = function(app) {
 				// 管理员
 				if(obj[0].role == 1) {
 					var option = {
-						uId: obj[0]._id
+						uId: obj[0]._id,
+						role: 1
 					};
 					res.json(option);
 				}
 				//k 教师
 				else if(obj[0].role == 2) {
-
+					var option = {
+						uId: obj[0]._id,
+						role: 2
+					};
+					res.json(option);
 				}
 				// 学生
 				else if(obj[0].role == 3) {
-
+					var option = {
+						uId: obj[0]._id,
+						role: 3
+					};
+					res.json(option);
 				}
 			}
 		});
@@ -47,7 +57,7 @@ module.exports = function(app) {
 	// admin 创建账户
 	app.post('/admin/create', admin.create);
 	// 教师请求
-	app.get('/teacher/:id', function(req, res) {});
+	app.get('/teacher/:id', teacher.teacher);
 	// 学生请求
 	app.get('/student/:id', function(req, res) {});
 }

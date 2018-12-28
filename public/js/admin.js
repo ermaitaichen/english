@@ -36,7 +36,7 @@
 		});
 
 		$('.teacherSex').on('change', function() {
-			console.log($(this).val());
+			sex = Number($(this).val());
 		});
 
 		$('.teacherSubmit').on('click', function() {
@@ -50,10 +50,27 @@
 					sex: sex,
 					schoolYear: schoolYear,
 					major: major,
-					role: 1
+					role: 2,
+					pId: $('#pId').val()
 				},
 				success: function(msg) {
-					console.log('创建账户成功: ', msg);
+					if(msg.mark == true) {
+						$('.msg').text(msg.msg);
+						console.log('返回创建的用户信息: ', msg.obj);
+						var str = '';
+						str += '<li>'
+							+ '<span>角色</span> '
+							+ '<span>'+ msg.obj.role +'</span> '
+							+ '<span>姓名</span> '
+							+ '<span>'+ msg.obj.username +'</span> '
+							+ '<span>性别</span> '
+							+ '<span>'+ msg.obj.sex +'</span> '
+						+'</li>';
+						$('.teacherList').append(str);
+					}
+					else {
+						$('.msg').text(msg.msg);
+					}
 				},
 				error: function(msg) {}
 			});
@@ -78,7 +95,6 @@
 				error: function(msg) {}
 			});
 		});
-
 
 	});
 })();
