@@ -2,7 +2,6 @@ const express = require('express');
 const pug = require('pug');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const indexRoute = require('./routes/indexRoute');
 // 创建一个服务器
 const app = express();
 
@@ -43,5 +42,5 @@ app.listen(4000, function(err) {
 	}
 });
 
-// 监听请求
-app.use('/', indexRoute);
+// 初始化路由
+require('./routes/routes')(app);

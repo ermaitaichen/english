@@ -21,6 +21,8 @@
 				},
 				success: function(msg) {
 					console.log('成功信息: ' ,msg);
+					// 页面跳转
+					window.location.href = '/admin/' + msg.uId;
 				},
 				error: function(msg) {
 					console.log('错误信息: ' ,msg);

@@ -3,8 +3,53 @@ head
 	meta(charset="utf8")
 	title 模板测试
 	script(src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js")
+	script(src="/static/js/admin.js")
 body
-	h1 node 测试
-	input(type="text" class="username")
-	input(type="text" class="password")
-	button(class="submit") 提交
+	h1 admin
+	button(class="createTeacher") 创建教师账号
+	button(class="createStudent") 创建学生账号
+	button(class="createAdmin") 创建管理员账号
+	ul(class="teacherForm userForm" style="display: none;")
+		li
+			input(type="text" placeholder="账号" class="teacherName")
+		li
+			input(type="text" placeholder="密码" class="teacherPassword")
+		li
+			input(type="text" placeholder="确认密码" class="teacherRepPassword")
+		li
+			input(type="radio" name="sex" value="0" class="teacherSex")
+			span 男
+			input(type="radio" name="sex" value="1" class="teacherSex")
+			span 女
+		li
+			button(class="teacherSubmit") 提交
+	ul(class="studentForm userForm" style="display: none;")
+		li
+			input(type="text" placeholder="账号" class="studentName")
+		li
+			input(type="text" placeholder="密码" class="studentPassword")
+		li
+			input(type="text" placeholder="确认密码" class="studentRepPassword")
+		li
+			input(type="text" placeholder="年级" class="studentSchoolYear")
+		li
+			input(type="text" placeholder="专业" class="studentMajor")
+		li
+			input(type="radio" name="sex" value="0")
+			span 男
+			input(type="radio" name="sex" value="1")
+			span 女
+		li
+			button(class="studentSubmit") 提交
+	ul(class="adminForm userForm" style="display: none;")
+		li
+			input(type="text" placeholder="账号" class="adminName")
+		li
+			input(type="text" placeholder="密码" class="adminPassword")
+		li
+			input(type="text" placeholder="确认密码" class="adminRepPassword")
+		li
+			button(class="adminSubmit") 提交
+	ul(class="teacherList")
+	ul(class="studentList")
+	ul(class="adminList")
