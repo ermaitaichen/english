@@ -1,6 +1,7 @@
 const Users = require('../schemas/userSchema');
 const admin = require('../controller/admin');
 const teacher = require('../controller/teacher');
+const student = require('../controller/student');
 
 module.exports = function(app) {
 	// 统一登录页
@@ -59,5 +60,5 @@ module.exports = function(app) {
 	// 教师请求
 	app.get('/teacher/:id', teacher.teacher);
 	// 学生请求
-	app.get('/student/:id', function(req, res) {});
+	app.get('/student/:id', student.student);
 }

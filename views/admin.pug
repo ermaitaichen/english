@@ -35,9 +35,9 @@ body
 		li
 			input(type="text" placeholder="专业" class="studentMajor")
 		li
-			input(type="radio" name="sex" value="0")
+			input(type="radio" name="sex" value="0" class="studentSex")
 			span 男
-			input(type="radio" name="sex" value="1")
+			input(type="radio" name="sex" value="1" class="studentSex")
 			span 女
 		li
 			button(class="studentSubmit") 提交
@@ -54,15 +54,38 @@ body
 	ul(class="teacherList")
 		li 教师信息
 		each val in users
-			li
-				span 角色 
-				span #{val.role} 
-				span 姓名 
-				span #{val.username} 
-				span 性别 
-				span #{val.sex} 
+			if val.role == 2
+				li
+					span 角色 
+					span #{val.role} 
+					span 姓名 
+					span #{val.username} 
+					span 性别 
+					span #{val.sex} 
 	ul(class="studentList")
 		li 学生信息
+		each val in users
+			if val.role == 3
+				li
+					span 角色 
+					span #{val.role} 
+					span 姓名 
+					span #{val.username} 
+					span 性别 
+					span #{val.sex} 
+					span 年级 
+					span #{val.schoolYear} 
+					span 专业 
+					span #{val.major} 
 	ul(class="adminList")
 		li 管理员信息
+		each val in users
+			if val.role == 1
+				li
+					span 角色 
+					span #{val.role} 
+					span 姓名 
+					span #{val.username} 
+					span 性别 
+					span #{val.sex} 
 	input(type="hidden" id="pId" value=pId)
