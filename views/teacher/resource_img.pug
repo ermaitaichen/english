@@ -1,0 +1,11 @@
+extends ../common/head.pug
+append head
+	link(href="/static/css/resource_img.css" rel="stylesheet")
+	script(src="/static/js/resource_img.js")
+block right
+	div(id="right")
+		h1 图片上传
+		div.upload 添加图片
+		form(action="/teacher/upload/img" method="post" enctype="multipart/form-data" style="display: none;")
+			input(type="file" name="upload_img")
+			input(type="submit" class="upload_img")

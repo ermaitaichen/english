@@ -1,4 +1,4 @@
 
 exports.student = function(req, res) {
-	res.render('student');
+	res.render('./student/student');
 }

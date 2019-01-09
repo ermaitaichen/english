@@ -4,11 +4,11 @@ exports.list = function(req, res) {
 	// 查询一下当前有的所有的 与该角色关联的 教师账号 管理员账号 以及学生账号
 	Users.find({pId: req.params.id}, function(err, obj) {
 		if(err) {
-			res.render('admin', {pId: req.params.id});
+			res.render('./admin/admin', {pId: req.params.id});
 		}
 		else {
 			console.log('admin line 10 查询到当前账号下的数据: ', obj);
-			res.render('admin', {pId: req.params.id, users: obj});
+			res.render('./admin/admin', {pId: req.params.id, users: obj});
 		}
 	});
 };
