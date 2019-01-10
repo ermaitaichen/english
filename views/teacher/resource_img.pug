@@ -9,3 +9,7 @@ block right
 		form(action="/teacher/upload/img" method="post" enctype="multipart/form-data" style="display: none;")
 			input(type="file" name="upload_img")
 			input(type="submit" class="upload_img")
+		ul
+			each val in imgArr
+				li
+					img(src='/upload/' + val.filename)

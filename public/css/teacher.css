@@ -1,4 +1,8 @@
 
+li {
+	list-style: none;
+}
+
 a {
 	text-decoration: none;
 	color: #adb3c5;
@@ -23,6 +27,7 @@ p {
 #right {
 	flex: 1;
 	height: 100%;
+	overflow-y: scroll;
 }
 
 #left h3 {

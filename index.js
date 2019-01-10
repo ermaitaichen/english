@@ -14,14 +14,19 @@ const app = express();
 // 配置 multer 模块
 const storage = multer.diskStorage({
 	destination: function(req, file, cb) {
-		cb(null, 'F:\\workspace\\english\\uploads');
+		var path = 'F:\\workspace\\english\\uploads';
+		cb(null, path);
 		// cb(null, path.join(__dirname,'uploads/'));
 	},
 	filename: function(req, file, cb) {
-		console.log('file: ', file);
+		console.log('入口文件 index.js line 21 file: ', file);
 		// 在这里判断一下 是什么媒体类型的文件
 		// 根据不同的媒体类型 做不同的处理
-		cb(null, file.originalname);
+		// 拿到媒体类型
+		var fileType = file.originalname.split('.');
+		fileType = fileType[fileType.length - 1];
+		var imgName = file.fieldname + '-' + Date.now() + '.' + fileType;
+		cb(null, imgName);
 	}
 });
 
@@ -49,6 +54,7 @@ mongoose.connect('mongodb://localhost/english', function(err) {
 
 // 静态资源托管
 app.use('/static', express.static('public'));
+app.use('/upload', express.static('uploads'));
 /*
 	设置模板引擎
 */

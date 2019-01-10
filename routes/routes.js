@@ -87,10 +87,5 @@ module.exports = function(app , upload) {
 	// 一个上传功能 然后 上传完成后预览
 	app.get('/resource/img', teacher.resourceImg);
 	// 上传图片 teacher.uploadImg
-	app.post('/teacher/upload/img', upload.single('upload_img'), function(req, res, upload) {
-		console.log('上传被调用');
-		console.log('upload: ', upload);
-		console.log('上传的文件: ', req.file);
-		res.render('./teacher/resource_img');
-	});
+	app.post('/teacher/upload/img', upload.single('upload_img'), teacher.uploadImg);
 }

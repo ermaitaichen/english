@@ -6,3 +6,8 @@
 	cursor: pointer;
 	border: 1px solid #333;
 }
+
+img {
+	width: 200px;
+	height: 100px;
+}

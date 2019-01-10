@@ -9,7 +9,8 @@
 		$('.upload_img').trigger('click');
 		});
 		$('.upload_img').on('click', function() {
-			alert(456);
+			// 判断页面跳转到哪里
+			// window.location.href = '/resource/img';
 		});
 	});
 })();
