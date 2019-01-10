@@ -16,7 +16,13 @@ const Test = mongoose.model('Test', testSchema);
 Test.statics = {
 	add: function(option) {
 		// 监测参数  option 必须是一个 object 类型
-		if() {}
+		// if(isObject(option)) {
+		// 	Test.add(option);
+		// }
+		// else {
+		// 	console.log('传入的参数不是一个 object 类型');
+		// 	return false;
+		// }
 		Test.add(option);
 	}
 }
