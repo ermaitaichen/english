@@ -31,6 +31,7 @@ exports.uploadImg = function(req, res) {
 	if(fileType == 'jpg' || fileType == 'png' || fileType == 'gif') {
 		fileType = 'img';
 	}
+
 	var imgHandle = new Imgs({
 		pId: pId,
 		fieldname: req.file.fieldname,
@@ -43,6 +44,7 @@ exports.uploadImg = function(req, res) {
 		size: req.file.size,
 		fileType: fileType
 	});
+
 	imgHandle.save(function(err, obj) {
 		if(err) {
 			console.log('保存上传的图片错误');
@@ -56,4 +58,9 @@ exports.uploadImg = function(req, res) {
 			res.redirect('/resource/img');
 		}
 	});
+}
+
+// 试题库
+exports.test = function(req, res) {
+	res.render('./teacher/test');
 }

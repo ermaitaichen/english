@@ -8,9 +8,5 @@
 		console.log('change');
 		$('.upload_img').trigger('click');
 		});
-		$('.upload_img').on('click', function() {
-			// 判断页面跳转到哪里
-			// window.location.href = '/resource/img';
-		});
 	});
 })();

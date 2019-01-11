@@ -88,4 +88,6 @@ module.exports = function(app , upload) {
 	app.get('/resource/img', teacher.resourceImg);
 	// 上传图片 teacher.uploadImg
 	app.post('/teacher/upload/img', upload.single('upload_img'), teacher.uploadImg);
+	// 试题库
+	app.get('/resource/test', teacher.test);
 }
